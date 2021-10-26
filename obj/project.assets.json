@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code Suede\\BlackJackk\\BlackJackk.csproj",
+      "projectUniqueName": "C:\\Users\\zamra\\Desktop\\AssignmentQuatro\\BlackJackk.csproj",
       "projectName": "BlackJackk",
-      "projectPath": "D:\\Code Suede\\BlackJackk\\BlackJackk.csproj",
+      "projectPath": "C:\\Users\\zamra\\Desktop\\AssignmentQuatro\\BlackJackk.csproj",
       "packagesPath": "C:\\Users\\zamra\\.nuget\\packages\\",
-      "outputPath": "D:\\Code Suede\\BlackJackk\\obj\\",
+      "outputPath": "C:\\Users\\zamra\\Desktop\\AssignmentQuatro\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

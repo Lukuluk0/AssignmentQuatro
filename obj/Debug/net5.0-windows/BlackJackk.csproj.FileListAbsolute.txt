@@ -16,3 +16,21 @@ D:\Code Suede\BlackJackk\obj\Debug\net5.0-windows\BlackJackk.dll
 D:\Code Suede\BlackJackk\obj\Debug\net5.0-windows\ref\BlackJackk.dll
 D:\Code Suede\BlackJackk\obj\Debug\net5.0-windows\BlackJackk.pdb
 D:\Code Suede\BlackJackk\obj\Debug\net5.0-windows\BlackJackk.genruntimeconfig.cache
+C:\Users\zamra\Desktop\AssignmentQuatro\bin\Debug\net5.0-windows\BlackJackk.exe
+C:\Users\zamra\Desktop\AssignmentQuatro\bin\Debug\net5.0-windows\BlackJackk.deps.json
+C:\Users\zamra\Desktop\AssignmentQuatro\bin\Debug\net5.0-windows\BlackJackk.runtimeconfig.json
+C:\Users\zamra\Desktop\AssignmentQuatro\bin\Debug\net5.0-windows\BlackJackk.runtimeconfig.dev.json
+C:\Users\zamra\Desktop\AssignmentQuatro\bin\Debug\net5.0-windows\BlackJackk.dll
+C:\Users\zamra\Desktop\AssignmentQuatro\bin\Debug\net5.0-windows\ref\BlackJackk.dll
+C:\Users\zamra\Desktop\AssignmentQuatro\bin\Debug\net5.0-windows\BlackJackk.pdb
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.csproj.AssemblyReference.cache
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.Form1.resources
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.csproj.GenerateResource.cache
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.AssemblyInfoInputs.cache
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.AssemblyInfo.cs
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.csproj.CoreCompileInputs.cache
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.dll
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\ref\BlackJackk.dll
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.pdb
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.genruntimeconfig.cache
