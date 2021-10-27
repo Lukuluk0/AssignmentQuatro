@@ -13,6 +13,6 @@ namespace BlackJackk
 
         public Color Colour { get { return colour; } set { colour = value; } }
         public Number Num { get { return number; } set { number = value; } }
-        public string Picture { set { picture = value; } }
+        public string Picture { get { return picture; } set { picture = value; } }
     }
 }

@@ -41,6 +41,9 @@ namespace BlackJackk
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_hit = new System.Windows.Forms.Button();
+            this.btn_shuffle = new System.Windows.Forms.Button();
+            this.btn_stand = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_croupier1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_croupier2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_croupier3)).BeginInit();
@@ -155,14 +158,45 @@ namespace BlackJackk
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // btn_hit
+            // 
+            this.btn_hit.Location = new System.Drawing.Point(1004, 31);
+            this.btn_hit.Name = "btn_hit";
+            this.btn_hit.Size = new System.Drawing.Size(168, 56);
+            this.btn_hit.TabIndex = 10;
+            this.btn_hit.Text = "Hit";
+            this.btn_hit.UseVisualStyleBackColor = true;
+            // 
+            // btn_shuffle
+            // 
+            this.btn_shuffle.Location = new System.Drawing.Point(1004, 93);
+            this.btn_shuffle.Name = "btn_shuffle";
+            this.btn_shuffle.Size = new System.Drawing.Size(168, 56);
+            this.btn_shuffle.TabIndex = 11;
+            this.btn_shuffle.Text = "Shuffle";
+            this.btn_shuffle.UseVisualStyleBackColor = true;
+            // 
+            // btn_stand
+            // 
+            this.btn_stand.Location = new System.Drawing.Point(1004, 155);
+            this.btn_stand.Name = "btn_stand";
+            this.btn_stand.Size = new System.Drawing.Size(168, 56);
+            this.btn_stand.TabIndex = 12;
+            this.btn_stand.Text = "Stand";
+            this.btn_stand.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 523);
+            this.Controls.Add(this.btn_stand);
+            this.Controls.Add(this.btn_shuffle);
+            this.Controls.Add(this.btn_hit);
             this.Controls.Add(this.line);
             this.Controls.Add(this.pic_player2);
             this.Controls.Add(this.pic_player3);
@@ -206,6 +240,9 @@ namespace BlackJackk
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.Button btn_hit;
+        private System.Windows.Forms.Button btn_shuffle;
+        private System.Windows.Forms.Button btn_stand;
     }
 }
 

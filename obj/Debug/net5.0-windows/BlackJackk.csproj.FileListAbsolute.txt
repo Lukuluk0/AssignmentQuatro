@@ -35,3 +35,4 @@ C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\ref\BlackJackk.
 C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.pdb
 C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.genruntimeconfig.cache
 C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.Form2.resources
+C:\Users\zamra\Desktop\AssignmentQuatro\obj\Debug\net5.0-windows\BlackJackk.Form3.resources

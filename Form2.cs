@@ -16,5 +16,23 @@ namespace BlackJackk
         {
             InitializeComponent();
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        public void GetInfo(ref Game game)
+        {
+            int i = 0;
+            if (string.IsNullOrEmpty(txt_nbr_deck.Text)|| string.IsNullOrEmpty(txt_nbr_player.Text))
+            {
+                MessageBox.Show("invalid input");
+                this.ShowDialog();
+            }
+            else { game.Nbr_deck = Int32.Parse(txt_nbr_deck.Text);
+                game.Nbr_player = Int32.Parse(txt_nbr_player.Text);
+            }
+           
+        }
     }
 }

@@ -17,14 +17,19 @@ namespace BlackJackk
         }
         public void CreateDeck(int nbr_deck)
         {
+            deck = new List<Card>();
+           
             for (int i = 0; i < nbr_deck; i++)
             {
-                for (int j = 0; j < 4; i++)
+                for (int j = 0; j < 4; j++)
                 {
                     Card card = new Card();
+                    
                     card.Colour = (Color)i;
-                    for (int l = 0; l < 13; j++)
+                   
+                    for (int l = 0; l < 13; l++)
                     {
+                        //Console.WriteLine("test" + j.ToString());
                         card.Num = (Number)l;
                         card.Picture = "/images/" + card.Num + "_" + card.Colour + ".png";
                         deck.Add(card);
@@ -32,6 +37,7 @@ namespace BlackJackk
                     }
                 }
             }
+            Randomize();
         }
         public int Count { get { return deck.Count; } }
         public void Add(Card card) { deck.Add(card); }
