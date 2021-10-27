@@ -32,7 +32,19 @@ namespace BlackJackk
                 player.Name = "player" + (i + 1).ToString();
                 players.Add(player);
             }
-            
+        }
+
+        public Player PlayerAt(int i)
+        {
+            return players[i];
+        }
+
+        public Card TopDeck()
+        {
+            Card draw = new Card();
+            decks.GetAt((decks.Count) - 1);
+            decks.RemoveCard((decks.Count) - 1);
+            return draw;
         }
     }
 }

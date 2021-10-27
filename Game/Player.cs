@@ -11,6 +11,7 @@ namespace BlackJackk
         private int Hand_score;
         private int point;
         private Hand main;
+        private bool isfinished;
 
         public string Name
         {
@@ -29,6 +30,18 @@ namespace BlackJackk
             {
                 //Hand_score += main[a].Num;
             }
+        }
+
+        public Hand hand
+        {
+            get { return main; }
+            set { main = value; }
+        }
+
+        public bool IsFinished
+        {
+            get { return isfinished; }
+            set { isfinished = value; }
         }
     }
 }

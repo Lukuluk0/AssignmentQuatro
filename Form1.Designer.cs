@@ -170,6 +170,7 @@ namespace BlackJackk
             this.btn_hit.TabIndex = 10;
             this.btn_hit.Text = "Hit";
             this.btn_hit.UseVisualStyleBackColor = true;
+            this.btn_hit.Click += new System.EventHandler(this.btn_hit_Click);
             // 
             // btn_shuffle
             // 
@@ -188,6 +189,7 @@ namespace BlackJackk
             this.btn_stand.TabIndex = 12;
             this.btn_stand.Text = "Stand";
             this.btn_stand.UseVisualStyleBackColor = true;
+            this.btn_stand.Click += new System.EventHandler(this.btn_stand_Click);
             // 
             // Form1
             // 

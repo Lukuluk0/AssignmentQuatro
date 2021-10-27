@@ -43,5 +43,7 @@ namespace BlackJackk
         public void Add(Card card) { deck.Add(card); }
 
         public Card GetAt(int index) { return deck[index]; }
+
+        public void RemoveCard(int index) { deck.RemoveAt(index); }
     }
 }
