@@ -108,21 +108,24 @@ namespace BlackJackk
             if(GameOver() == true)
             {
                 BestPlayer();
-                EndGame();
+                Restart();
             }
         }
         private void BestPlayer()
         {
-            bool permut = true;
-            Player player = game.PlayerAt(0);
-            while(permut)
+            //bool permut = true;
+            Player player = new Player();
+            //while(permut)
+            //{
+            //  permut = false;
+            int temoin = 0;
+            for (int i = 0; i < game.Nbr_player; i++)
             {
-                permut = false;
-                for (int i = 0; i < game.Nbr_player; i++)
+                if (game.PlayerAt(i).hand.CalculPoint() < 22)
                 {
-                    if (game.PlayerAt(i).hand.CalculPoint() > player.hand.CalculPoint())
+                    if ((game.PlayerAt(i).hand.CalculPoint() > temoin))
                     {
-                        permut = true;
+                        temoin = game.PlayerAt(i).hand.CalculPoint();
                         player = game.PlayerAt(i);
                     }
                 }
@@ -184,6 +187,28 @@ namespace BlackJackk
                 btn_ok.Enabled = true;
             }
             Turn(turn);
+        }
+
+        private void Restart()
+        {
+            lbl_player.Text = "";
+            lbl_point.Text = "";
+            lbl_CardRemaining.Text = "";
+            for (int i = 0; i < game.PlayerAt(turn).hand.Size(); i++)
+            {
+                play_pic[i].ImageLocation = null;
+            }
+            for (int j = 0; j < game.Nbr_player; j++)
+            {
+                game.PlayerAt(j).hand.Clear();
+                game.PlayerAt(j).IsFinished = false;
+            }
+
+            turn = 0;
+            btn_hit.Enabled = true;
+            btn_ok.Enabled = false;
+            btn_stand.Enabled = true;
+            btn_shuffle.Enabled = true;
         }
     }
 }

@@ -48,5 +48,9 @@ namespace BlackJackk
             }
             return point;
         }
+        public void Clear()
+        {
+            m_hand.Clear();
+        }
     }
 }

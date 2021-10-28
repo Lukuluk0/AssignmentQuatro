@@ -12,6 +12,8 @@ namespace BlackJackk
         private int point;
         private Hand main;
         private bool isfinished;
+        private int nbrPartie;
+        private int nbrWin;
 
         public Player()
         {
