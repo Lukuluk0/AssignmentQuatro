@@ -44,7 +44,7 @@ namespace BlackJackk
         private void Form1_Load(object sender, EventArgs e)
         {
             iniHand();
-            //AllocConsole();
+            AllocConsole();
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace BlackJackk
            
             Hand playerHand = new Hand();
             playerHand = (game.PlayerAt(i)).hand;
-            //MessageBox.Show("teub");
+            //MessageBox.Show(playerHand.Size().ToString());
             DisplayCard(playerHand);
             
         }
@@ -80,6 +80,7 @@ namespace BlackJackk
         {
             for(int j=0; j<playHand.Size(); j++)
             {
+                //pic_player1.ImageLocation = playHand.At(j).Picture; 
                 play_pic[j].ImageLocation = playHand.At(j).Picture;
             }
         }
@@ -89,14 +90,20 @@ namespace BlackJackk
             Turn(turn);
             game.PlayerAt(turn).AddInHand(game.TopDeck());
             turn++;
+            if (turn >= game.Nbr_player) { turn = 0; }
             Turn(turn);
+            //MessageBox.Show(game.PlayerAt(0).hand.At(0).Colour.ToString());
+            //MessageBox.Show(game.PlayerAt(0).hand.At(0).Picture);
+            //MessageBox.Show(haha.Size().ToString());
         }
 
         private void btn_stand_Click(object sender, EventArgs e)
         {
+            
             Turn(turn);
             game.PlayerAt(turn).IsFinished = true;
             turn++;
+            if (turn >= game.Nbr_player) { turn = 0; }
             Turn(turn);
         }
     }
