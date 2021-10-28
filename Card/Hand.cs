@@ -44,7 +44,7 @@ namespace BlackJackk
             int point = 0;
             for(int i=0; i<m_hand.Count(); i++)
             {
-                point += m_hand[i].Point;
+                point += m_hand[i].Point+1;
             }
             return point;
         }

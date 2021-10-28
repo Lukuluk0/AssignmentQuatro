@@ -39,11 +39,16 @@ namespace BlackJackk
             return players[i];
         }
 
-        public Card TopDeck()
+        public int nbrCardDeck()
+        {
+            return decks.Count;
+        }
+
+        public Card TopDeck(int i)
         {
             Card draw = new Card();
-            draw = decks.GetAt((decks.Count) - 1);
-            decks.RemoveCard((decks.Count) - 1);
+            draw = decks.GetAt(i);
+            decks.RemoveCard();
             return draw;
         }
     }

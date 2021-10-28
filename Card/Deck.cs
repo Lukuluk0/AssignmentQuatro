@@ -8,15 +8,24 @@ namespace BlackJackk
     public class Deck
     {
         private List<Card> deck;
+        private static Random rng = new Random();
 
         public Deck()
         {
             deck = new List<Card>();
         }
+
         public void Randomize()
         {
-            var rnd = new Random();
-            var randomized = deck.OrderBy(item => rnd.Next());
+            int n = deck.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                Card value = deck[k];
+                deck[k] = deck[n];
+                deck[n] = value;
+            }
         }
         public void CreateDeck(int nbr_deck)
         {
@@ -26,32 +35,25 @@ namespace BlackJackk
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    Card card = new Card();
-                    
-                    card.Colour = (Color)i;
-                   
                     for (int l = 0; l < 13; l++)
                     {
-                        //Console.WriteLine("test" + j.ToString());
+                        Card card = new Card();
+                        card.Colour = (Color)j;
                         card.Num = (Number)l;
-                        //card.Picture = "/images/" + card.Num + "_" + card.Colour + ".png";
-                       
-                        //string teub = "C:/Users/zamra/Desktop/AssignmentQuatro/images" + card.Num.ToString() + "_" + card.Colour.ToString() + ".png"; ;
-                        //Console.Write(teub);
-                        card.Picture = @"~\AssignmentQuatro\images\" + card.Num.ToString() + "_" + card.Colour.ToString() + ".png";
-                        Console.Write(card.Picture);
+                        card.Picture = "C:/Users/zamra/Desktop/AssignmentQuatro/images/" + card.Num.ToString() + "_" + card.Colour.ToString() + ".png";
                         deck.Add(card);
-
                     }
                 }
             }
             Randomize();
         }
+
+        
         public int Count { get { return deck.Count; } }
         public void Add(Card card) { deck.Add(card); }
 
         public Card GetAt(int index) { return deck[index]; }
 
-        public void RemoveCard(int index) { deck.RemoveAt(index); }
+        public void RemoveCard() { deck.Remove(deck.Last()); }
     }
 }

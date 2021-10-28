@@ -31,14 +31,14 @@ namespace BlackJackk
         {
             play_pic = new List<PictureBox>();
             deal_pic = new List<PictureBox>();
-            play_pic.Add(pic_player1);
-            play_pic.Add(pic_player2);
-            play_pic.Add(pic_player3);
-            play_pic.Add(pic_player4);
-            deal_pic.Add(pic_croupier1);
-            deal_pic.Add(pic_croupier2);
-            deal_pic.Add(pic_croupier3);
-            deal_pic.Add(pic_croupier4);
+            play_pic.Add(pic_croupier1);
+            play_pic.Add(pic_croupier2);
+            play_pic.Add(pic_croupier3);
+            play_pic.Add(pic_croupier4);
+            deal_pic.Add(pic_player1);
+            deal_pic.Add(pic_player2);
+            deal_pic.Add(pic_player3);
+            deal_pic.Add(pic_player4);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,54 +60,128 @@ namespace BlackJackk
                 f3.ShowDialog();
                 f3.GetPlayerName(ref game, i);
             }
+            lbl_TotalDeck.Text = (game.nbrCardDeck()).ToString();
+            btn_hit.Enabled = true;
+            btn_stand.Enabled = true;
+            btn_shuffle.Enabled = true;
         }
-        private void Start()
+        
+        private bool GameOver()
         {
-     
+            bool cbon = true;
+            for (int i = 0; i < game.Nbr_player; i++)
+            {
+                if (game.PlayerAt(i).IsFinished == false)
+                {
+                    cbon = false;
+                }
+            }
+            return cbon;
         }
-
+        
+        private void EndGame()
+        {
+            lbl_player.Text = "";
+            lbl_point.Text = "";
+            lbl_TotalDeck.Text = "";
+            lbl_CardRemaining.Text = "";
+            btn_hit.Enabled = false;
+            btn_ok.Enabled = false;
+            btn_stand.Enabled = false;
+            btn_shuffle.Enabled = false;
+            for (int i = 0; i < game.PlayerAt(turn).hand.Size(); i++)
+            {
+                play_pic[i].ImageLocation = null;
+            }
+        }
         private void Turn(int i)
         {
-           
             Hand playerHand = new Hand();
             lbl_player.Text = game.PlayerAt(turn).Name;
-            playerHand = (game.PlayerAt(i)).hand;
-            //MessageBox.Show(playerHand.Size().ToString());
+            playerHand = (game.PlayerAt(turn)).hand;
+            lbl_point.Text = game.PlayerAt(turn).hand.CalculPoint().ToString();
+            if(game.PlayerAt(turn).hand.CalculPoint() >= 21)
+            {
+                game.PlayerAt(turn).IsFinished = true;
+            }
             DisplayCard(playerHand);
+            if(GameOver() == true)
+            {
+                BestPlayer();
+                EndGame();
+            }
         }
-
+        private void BestPlayer()
+        {
+            bool permut = true;
+            Player player = game.PlayerAt(0);
+            while(permut)
+            {
+                permut = false;
+                for (int i = 0; i < game.Nbr_player; i++)
+                {
+                    if (game.PlayerAt(i).hand.CalculPoint() > player.hand.CalculPoint())
+                    {
+                        permut = true;
+                        player = game.PlayerAt(i);
+                    }
+                }
+            }
+            MessageBox.Show("The best player is : " + player.Name);
+        }
         private void DisplayCard(Hand playHand)
         {
-
-            //play_pic[0].ImageLocation = "‪C:/Users/IEUser/Desktop/AssignmentQuatro/images/Ace_Spade.png";
-            for (int j = 0; j < playHand.Size(); j++)
+            for (int j = playHand.Size()-1; j >=0 ; j--)
             {
-                    play_pic[j].ImageLocation = playHand.At(j).Picture;
+                play_pic[j].Visible = true;
+                play_pic[j].ImageLocation = playHand.At(playHand.Size()-1 - j).Picture;
             }
         }
 
         private void btn_hit_Click(object sender, EventArgs e)
         {
             Turn(turn);
-            game.PlayerAt(turn).AddInHand(game.TopDeck());
+            if (game.PlayerAt(turn).IsFinished == false)
+            {
+                game.PlayerAt(turn).AddInHand(game.TopDeck(game.nbrCardDeck() - 1));
+            }
+            lbl_CardRemaining.Text = (game.nbrCardDeck()).ToString();
+            btn_stand.Enabled = false;
+            btn_hit.Enabled = false;
+            btn_ok.Enabled = true;
+            Turn(turn);
+        }
+
+        private void btn_stand_Click(object sender, EventArgs e)
+        {
+            Turn(turn);
+            game.PlayerAt(turn).IsFinished = true;
+            btn_stand.Enabled = false;
+            btn_hit.Enabled = false;
+            btn_ok.Enabled = true;
+            Turn(turn);
+        }
+
+        private void btn_ok_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < game.PlayerAt(turn).hand.Size(); i++)
+            {
+                play_pic[i].ImageLocation = null;
+            }
             turn++;
             if (turn == game.Nbr_player)
             {
                 turn = 0;
             }
-            Turn(turn);
-
-        }
-
-        private void btn_stand_Click(object sender, EventArgs e)
-        {
-            
-            Turn(turn);
-            game.PlayerAt(turn).IsFinished = true;
-            turn++;
-            if (turn == game.Nbr_player)
+            if (game.PlayerAt(turn).IsFinished == false)
             {
-                turn = 0;
+                btn_stand.Enabled = true;
+                btn_hit.Enabled = true;
+                btn_ok.Enabled = false;
+            }
+            else
+            {
+                btn_ok.Enabled = true;
             }
             Turn(turn);
         }
