@@ -42,7 +42,7 @@ namespace BlackJackk
         public Card TopDeck()
         {
             Card draw = new Card();
-            decks.GetAt((decks.Count) - 1);
+            draw = decks.GetAt((decks.Count) - 1);
             decks.RemoveCard((decks.Count) - 1);
             return draw;
         }

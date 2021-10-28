@@ -33,7 +33,7 @@ namespace BlackJackk
                 return 0;
             }
         }
-        
+
         public Card At(int i)
         {
             return m_hand[i];

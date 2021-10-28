@@ -70,13 +70,16 @@ namespace BlackJackk
         {
            
             Hand playerHand = new Hand();
+            lbl_player.Text = game.PlayerAt(turn).Name;
             playerHand = (game.PlayerAt(i)).hand;
             //MessageBox.Show(playerHand.Size().ToString());
             DisplayCard(playerHand);
         }
 
         private void DisplayCard(Hand playHand)
-        { 
+        {
+
+            //play_pic[0].ImageLocation = "‪C:/Users/IEUser/Desktop/AssignmentQuatro/images/Ace_Spade.png";
             for (int j = 0; j < playHand.Size(); j++)
             {
                     play_pic[j].ImageLocation = playHand.At(j).Picture;
