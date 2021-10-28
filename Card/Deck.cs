@@ -9,7 +9,10 @@ namespace BlackJackk
     {
         private List<Card> deck;
 
-
+        public Deck()
+        {
+            deck = new List<Card>();
+        }
         public void Randomize()
         {
             var rnd = new Random();

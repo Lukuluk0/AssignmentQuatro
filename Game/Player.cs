@@ -13,6 +13,12 @@ namespace BlackJackk
         private Hand main;
         private bool isfinished;
 
+        public Player()
+        {
+            main = new Hand();
+        }
+
+
         public string Name
         {
             get { return name; }

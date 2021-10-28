@@ -73,14 +73,13 @@ namespace BlackJackk
             playerHand = (game.PlayerAt(i)).hand;
             //MessageBox.Show("teub");
             DisplayCard(playerHand);
-            
         }
 
         private void DisplayCard(Hand playHand)
-        {
-            for(int j=0; j<playHand.Size(); j++)
+        { 
+            for (int j = 0; j < playHand.Size(); j++)
             {
-                play_pic[j].ImageLocation = playHand.At(j).Picture;
+                    play_pic[j].ImageLocation = playHand.At(j).Picture;
             }
         }
 
@@ -89,7 +88,12 @@ namespace BlackJackk
             Turn(turn);
             game.PlayerAt(turn).AddInHand(game.TopDeck());
             turn++;
+            if (turn == game.Nbr_player)
+            {
+                turn = 0;
+            }
             Turn(turn);
+
         }
 
         private void btn_stand_Click(object sender, EventArgs e)
@@ -97,6 +101,10 @@ namespace BlackJackk
             Turn(turn);
             game.PlayerAt(turn).IsFinished = true;
             turn++;
+            if (turn == game.Nbr_player)
+            {
+                turn = 0;
+            }
             Turn(turn);
         }
     }

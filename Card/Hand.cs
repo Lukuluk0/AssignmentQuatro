@@ -9,6 +9,15 @@ namespace BlackJackk
     {
         private List<Card> m_hand;
 
+        public Hand()
+        {
+            m_hand = new List<Card>();
+        }
+        public List<Card> Main
+        {
+            get { return m_hand; }
+            set { m_hand = value; }
+        }
         public void Add(Card a)
         {
             m_hand.Add(a);
@@ -22,6 +31,16 @@ namespace BlackJackk
         public Card At(int i)
         {
             return m_hand[i];
+        }
+
+        public int CalculPoint()
+        {
+            int point = 0;
+            for(int i=0; i<m_hand.Count(); i++)
+            {
+                point += m_hand[i].Point;
+            }
+            return point;
         }
     }
 }
