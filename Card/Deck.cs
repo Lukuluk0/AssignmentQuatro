@@ -34,7 +34,12 @@ namespace BlackJackk
                     {
                         //Console.WriteLine("test" + j.ToString());
                         card.Num = (Number)l;
-                        card.Picture = "/images/" + card.Num + "_" + card.Colour + ".png";
+                        //card.Picture = "/images/" + card.Num + "_" + card.Colour + ".png";
+                       
+                        //string teub = "C:/Users/zamra/Desktop/AssignmentQuatro/images" + card.Num.ToString() + "_" + card.Colour.ToString() + ".png"; ;
+                        //Console.Write(teub);
+                        card.Picture = "C:/Users/zamra/Desktop/AssignmentQuatro/images/" + card.Num.ToString() + "_" + card.Colour.ToString() + ".png";
+                        //Console.Write(card.Picture);
                         deck.Add(card);
 
                     }

@@ -44,7 +44,7 @@ namespace BlackJackk
         private void Form1_Load(object sender, EventArgs e)
         {
             iniHand();
-            //AllocConsole();
+            AllocConsole();
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace BlackJackk
            
             Hand playerHand = new Hand();
             playerHand = (game.PlayerAt(i)).hand;
-            //MessageBox.Show("teub");
+            //MessageBox.Show(playerHand.Size().ToString());
             DisplayCard(playerHand);
         }
 
@@ -98,6 +98,7 @@ namespace BlackJackk
 
         private void btn_stand_Click(object sender, EventArgs e)
         {
+            
             Turn(turn);
             game.PlayerAt(turn).IsFinished = true;
             turn++;

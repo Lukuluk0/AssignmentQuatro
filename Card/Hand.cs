@@ -25,9 +25,15 @@ namespace BlackJackk
 
         public int Size()
         {
-            return m_hand.Count();
+            try
+            {
+                return m_hand.Count();
+            }catch
+            {
+                return 0;
+            }
         }
-
+        
         public Card At(int i)
         {
             return m_hand[i];
