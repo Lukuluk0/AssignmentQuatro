@@ -52,6 +52,12 @@ namespace BlackJackk
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_TotalDeck = new System.Windows.Forms.Label();
             this.btn_ok = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_point_croup = new System.Windows.Forms.Label();
+            this.pic_croupier5 = new System.Windows.Forms.PictureBox();
+            this.pic_croupier6 = new System.Windows.Forms.PictureBox();
+            this.pic_player5 = new System.Windows.Forms.PictureBox();
+            this.pic_player6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_croupier1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_croupier2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_croupier3)).BeginInit();
@@ -61,6 +67,10 @@ namespace BlackJackk
             ((System.ComponentModel.ISupportInitialize)(this.pic_player3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_player2)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_croupier5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_croupier6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_player5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_player6)).BeginInit();
             this.SuspendLayout();
             // 
             // pic_croupier1
@@ -106,43 +116,47 @@ namespace BlackJackk
             // 
             // pic_player1
             // 
-            this.pic_player1.Location = new System.Drawing.Point(654, 294);
+            this.pic_player1.Location = new System.Drawing.Point(1030, 294);
             this.pic_player1.Name = "pic_player1";
             this.pic_player1.Size = new System.Drawing.Size(125, 176);
             this.pic_player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_player1.TabIndex = 4;
             this.pic_player1.TabStop = false;
+            this.pic_player1.Visible = false;
             // 
             // pic_player4
             // 
-            this.pic_player4.Location = new System.Drawing.Point(1047, 294);
+            this.pic_player4.Location = new System.Drawing.Point(954, 294);
             this.pic_player4.Name = "pic_player4";
             this.pic_player4.Size = new System.Drawing.Size(125, 176);
             this.pic_player4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_player4.TabIndex = 5;
             this.pic_player4.TabStop = false;
+            this.pic_player4.Visible = false;
             // 
             // pic_player3
             // 
-            this.pic_player3.Location = new System.Drawing.Point(916, 294);
+            this.pic_player3.Location = new System.Drawing.Point(880, 294);
             this.pic_player3.Name = "pic_player3";
             this.pic_player3.Size = new System.Drawing.Size(125, 176);
             this.pic_player3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_player3.TabIndex = 6;
             this.pic_player3.TabStop = false;
+            this.pic_player3.Visible = false;
             // 
             // pic_player2
             // 
-            this.pic_player2.Location = new System.Drawing.Point(785, 294);
+            this.pic_player2.Location = new System.Drawing.Point(808, 294);
             this.pic_player2.Name = "pic_player2";
             this.pic_player2.Size = new System.Drawing.Size(125, 176);
             this.pic_player2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_player2.TabIndex = 7;
             this.pic_player2.TabStop = false;
+            this.pic_player2.Visible = false;
             // 
             // line
             // 
-            this.line.Location = new System.Drawing.Point(598, 25);
+            this.line.Location = new System.Drawing.Point(596, 68);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(10, 489);
             this.line.TabIndex = 8;
@@ -239,7 +253,7 @@ namespace BlackJackk
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(666, 62);
+            this.label2.Location = new System.Drawing.Point(493, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 20);
             this.label2.TabIndex = 16;
@@ -248,7 +262,7 @@ namespace BlackJackk
             // lbl_CardRemaining
             // 
             this.lbl_CardRemaining.AutoSize = true;
-            this.lbl_CardRemaining.Location = new System.Drawing.Point(794, 62);
+            this.lbl_CardRemaining.Location = new System.Drawing.Point(621, 31);
             this.lbl_CardRemaining.Name = "lbl_CardRemaining";
             this.lbl_CardRemaining.Size = new System.Drawing.Size(39, 20);
             this.lbl_CardRemaining.TabIndex = 17;
@@ -257,7 +271,7 @@ namespace BlackJackk
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(829, 61);
+            this.label3.Location = new System.Drawing.Point(656, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(15, 20);
             this.label3.TabIndex = 18;
@@ -266,7 +280,7 @@ namespace BlackJackk
             // lbl_TotalDeck
             // 
             this.lbl_TotalDeck.AutoSize = true;
-            this.lbl_TotalDeck.Location = new System.Drawing.Point(839, 62);
+            this.lbl_TotalDeck.Location = new System.Drawing.Point(666, 31);
             this.lbl_TotalDeck.Name = "lbl_TotalDeck";
             this.lbl_TotalDeck.Size = new System.Drawing.Size(39, 20);
             this.lbl_TotalDeck.TabIndex = 19;
@@ -283,11 +297,73 @@ namespace BlackJackk
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(682, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Point :";
+            // 
+            // lbl_point_croup
+            // 
+            this.lbl_point_croup.AutoSize = true;
+            this.lbl_point_croup.Location = new System.Drawing.Point(728, 68);
+            this.lbl_point_croup.Name = "lbl_point_croup";
+            this.lbl_point_croup.Size = new System.Drawing.Size(17, 20);
+            this.lbl_point_croup.TabIndex = 22;
+            this.lbl_point_croup.Text = "0";
+            // 
+            // pic_croupier5
+            // 
+            this.pic_croupier5.Location = new System.Drawing.Point(363, 294);
+            this.pic_croupier5.Name = "pic_croupier5";
+            this.pic_croupier5.Size = new System.Drawing.Size(125, 176);
+            this.pic_croupier5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_croupier5.TabIndex = 23;
+            this.pic_croupier5.TabStop = false;
+            // 
+            // pic_croupier6
+            // 
+            this.pic_croupier6.Location = new System.Drawing.Point(435, 294);
+            this.pic_croupier6.Name = "pic_croupier6";
+            this.pic_croupier6.Size = new System.Drawing.Size(125, 176);
+            this.pic_croupier6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_croupier6.TabIndex = 24;
+            this.pic_croupier6.TabStop = false;
+            // 
+            // pic_player5
+            // 
+            this.pic_player5.Location = new System.Drawing.Point(728, 294);
+            this.pic_player5.Name = "pic_player5";
+            this.pic_player5.Size = new System.Drawing.Size(125, 176);
+            this.pic_player5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_player5.TabIndex = 25;
+            this.pic_player5.TabStop = false;
+            this.pic_player5.Visible = false;
+            // 
+            // pic_player6
+            // 
+            this.pic_player6.Location = new System.Drawing.Point(656, 294);
+            this.pic_player6.Name = "pic_player6";
+            this.pic_player6.Size = new System.Drawing.Size(126, 176);
+            this.pic_player6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_player6.TabIndex = 26;
+            this.pic_player6.TabStop = false;
+            this.pic_player6.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 523);
+            this.Controls.Add(this.pic_player6);
+            this.Controls.Add(this.pic_player5);
+            this.Controls.Add(this.pic_croupier6);
+            this.Controls.Add(this.pic_croupier5);
+            this.Controls.Add(this.lbl_point_croup);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.lbl_TotalDeck);
             this.Controls.Add(this.label3);
@@ -323,6 +399,10 @@ namespace BlackJackk
             ((System.ComponentModel.ISupportInitialize)(this.pic_player2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_croupier5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_croupier6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_player5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_player6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,6 +433,12 @@ namespace BlackJackk
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_TotalDeck;
         private System.Windows.Forms.Button btn_ok;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_point_croup;
+        private System.Windows.Forms.PictureBox pic_croupier5;
+        private System.Windows.Forms.PictureBox pic_croupier6;
+        private System.Windows.Forms.PictureBox pic_player5;
+        private System.Windows.Forms.PictureBox pic_player6;
     }
 }
 

@@ -22,6 +22,7 @@ namespace BlackJackk
         private int turn = 0;
 
         Game game;
+        Hand croupier;
         public Form1()
         {
             InitializeComponent();
@@ -35,10 +36,14 @@ namespace BlackJackk
             play_pic.Add(pic_croupier2);
             play_pic.Add(pic_croupier3);
             play_pic.Add(pic_croupier4);
+            play_pic.Add(pic_croupier5);
+            play_pic.Add(pic_croupier6);
             deal_pic.Add(pic_player1);
-            deal_pic.Add(pic_player2);
-            deal_pic.Add(pic_player3);
             deal_pic.Add(pic_player4);
+            deal_pic.Add(pic_player3);
+            deal_pic.Add(pic_player2);
+            deal_pic.Add(pic_player5);
+            deal_pic.Add(pic_player6);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,6 +57,8 @@ namespace BlackJackk
             Form2 f2 = new Form2();
             f2.ShowDialog();
             game = new Game();
+            croupier = new Hand();
+            //croupier.Add(game.TopDeck(game.nbrCardDeck() - 1));
             f2.GetInfo(ref game);
             game.initialize();
             for (int i = 0; i < game.Nbr_player; i++)
@@ -64,6 +71,7 @@ namespace BlackJackk
             btn_hit.Enabled = true;
             btn_stand.Enabled = true;
             btn_shuffle.Enabled = true;
+            Crouplar();
         }
         
         private bool GameOver()
@@ -113,11 +121,7 @@ namespace BlackJackk
         }
         private void BestPlayer()
         {
-            //bool permut = true;
             Player player = new Player();
-            //while(permut)
-            //{
-            //  permut = false;
             int temoin = 0;
             for (int i = 0; i < game.Nbr_player; i++)
             {
@@ -174,6 +178,7 @@ namespace BlackJackk
             turn++;
             if (turn == game.Nbr_player)
             {
+                Crouplar();
                 turn = 0;
             }
             if (game.PlayerAt(turn).IsFinished == false)
@@ -192,23 +197,45 @@ namespace BlackJackk
         private void Restart()
         {
             lbl_player.Text = "";
-            lbl_point.Text = "";
+            lbl_point.Text = "0";
             lbl_CardRemaining.Text = "";
+            lbl_point_croup.Text = "0";
             for (int i = 0; i < game.PlayerAt(turn).hand.Size(); i++)
             {
                 play_pic[i].ImageLocation = null;
+            }
+            for (int i = 0; i < croupier.Size(); i++)
+            {
+                deal_pic[i].ImageLocation = null;
             }
             for (int j = 0; j < game.Nbr_player; j++)
             {
                 game.PlayerAt(j).hand.Clear();
                 game.PlayerAt(j).IsFinished = false;
             }
-
+            croupier.Clear();
             turn = 0;
             btn_hit.Enabled = true;
             btn_ok.Enabled = false;
             btn_stand.Enabled = true;
             btn_shuffle.Enabled = true;
+        }
+        private void Crouplar()
+        {
+            if (croupier.CalculPoint() <= 17)
+            {
+                croupier.Add(game.TopDeck(game.nbrCardDeck() - 1));
+            }
+            lbl_point_croup.Text = croupier.CalculPoint().ToString();
+            DisplayCrouplard();
+        }
+        private void DisplayCrouplard()
+        {
+            for (int j = croupier.Size() - 1; j >= 0; j--)
+            {
+                deal_pic[j].Visible = true;
+                deal_pic[j].ImageLocation = croupier.At(croupier.Size() - 1 - j).Picture;
+            }
         }
     }
 }
